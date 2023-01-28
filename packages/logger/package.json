@@ -1,0 +1,25 @@
+{
+  "name": "@kd/logger",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "source": "./index.ts",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "clean": "rimraf dist",
+    "dev": "tsc -w"
+  },
+  "dependencies": {
+    "winston": "^3.8.2",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
+  "devDependencies": {
+    "rimraf": "^4.0.7",
+    "tsconfig": "workspace:*",
+    "typescript": "4.9.4"
+  }
+}

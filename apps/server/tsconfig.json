@@ -1,0 +1,29 @@
+{
+  "extends": "tsconfig/server.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["*"],
+      "@src/*": ["src/*"],
+      "@config": ["src/config"],
+      "@controllers/*": ["src/controllers/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@middlewares/*": ["src/middlewares/*"],
+      "@routes/*": ["src/routes/*"],
+      "@services/*": ["src/services/*"],
+      "@schemas/*": ["src/schemas/*"],
+      "@utils/*": ["src/utils/*"]
+    }
+  },
+  "include": ["src/**/*.ts", ".env"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".turbo",
+    "coverage",
+    "config",
+    "src/**/*.test.ts",
+    "src/__test__"
+  ]
+}
