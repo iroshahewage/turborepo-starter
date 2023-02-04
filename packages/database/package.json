@@ -1,0 +1,33 @@
+{
+  "name": "database",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "source": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "clean": "rimraf .turbo node_modules dist",
+    "dev": "tsc -w",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push --skip-generate",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:migrate:dev": "prisma migrate dev",
+    "format": "prisma format",
+    "studio": "prisma studio"
+  },
+  "devDependencies": {
+    "prisma": "^4.9.0",
+    "rimraf": "^4.0.7",
+    "tsconfig": "workspace:*",
+    "typescript": "4.9.4"
+  },
+  "dependencies": {
+    "@kd/logger": "workspace:*",
+    "@prisma/client": "^4.9.0",
+    "ioredis": "^5.3.0"
+  }
+}

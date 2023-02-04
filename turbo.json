@@ -2,18 +2,28 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "^db:generate"],
       "outputs": ["dist/**", ".next/**"]
+    },
+    "db:migrate:deploy": {
+      "outputs": []
     },
     "lint": {
       "outputs": []
     },
     "dev": {
+      "dependsOn": ["^db:generate"],
       "cache": false
     },
     "test": {
       "dependsOn": ["^build"],
       "outputs": ["coverage/**"]
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:push": {
+      "cache": false
     }
   }
 }

@@ -20,6 +20,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Prisma Generate
+        run: pnpm db:generate
+
       - name: Run build
         run: pnpm run build
 
